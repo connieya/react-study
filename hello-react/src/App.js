@@ -1,11 +1,11 @@
 import "./App.css";
 import ScrollBox from "./05_ref/ScrollBox";
+import IterationSample from "./06_map/IterationSample";
 
 function App() {
   return (
     <>
-      <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
-      <button onClick={() => this.scrollBox.scrollToBottom()}>맨 밑으로</button>
+      <IterationSample />
     </>
   );
 }
