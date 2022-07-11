@@ -1,13 +1,11 @@
 import "./App.css";
-import Counter from "./Counter";
-import EventPracticeFunc from "./EventPracticeFunc";
-import EventPracticeClass from "./EventPracticeClass";
-import Say from "./Say";
+import ScrollBox from "./05_ref/ScrollBox";
 
 function App() {
   return (
     <>
-      <EventPracticeFunc />
+      <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+      <button onClick={() => this.scrollBox.scrollToBottom()}>맨 밑으로</button>
     </>
   );
 }
