@@ -1,12 +1,11 @@
 import "./App.css";
-import MyComponent from "./MyComponent";
+import Counter from "./Counter";
+import Say from "./Say";
 
 function App() {
   return (
     <>
-      <MyComponent name={3} favoriteNumber={1}>
-        리액트
-      </MyComponent>
+      <Say />
     </>
   );
 }
