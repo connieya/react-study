@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
 const Chat = ({ socket, username, room }) => {
   const [message, setMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+
   const sendMessage = async () => {
     if (message !== "") {
       const messageData = {
@@ -25,8 +26,8 @@ const Chat = ({ socket, username, room }) => {
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
-      console.log("use Effect data = ", data);
       setMessageList((list) => [...list, data]);
+      //   console.log("msgList", messageList);
     });
   }, [socket]);
 
@@ -76,4 +77,4 @@ const Chat = ({ socket, username, room }) => {
   );
 };
 
-export default Chat;
+export default React.memo(Chat);

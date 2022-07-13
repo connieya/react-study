@@ -1,0 +1,1 @@
+ npm i react-loader-spinner mic-recorder-to-mp3 axios --save
