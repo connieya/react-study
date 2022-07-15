@@ -8,7 +8,9 @@
 - npm install bcrypt --save
 - npm install jsonwebtoken --save
 - npm install cookie-parser --save
+- npm install concurrently --save
 - npm run start
+- npm run backend
 
 ## git
 
