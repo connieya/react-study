@@ -5,6 +5,9 @@
 - npm install mongoose --save
 - npm install body-parser --save
 - npm install nodemon --save-dev (dev 를 붙이면 develope 모드 )
+- npm install bcrypt --save
+- npm install jsonwebtoken --save
+- npm install cookie-parser --save
 - npm run start
 
 ## git
