@@ -1,37 +1,28 @@
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { useEffect, useState } from 'react';
+import Home from './components/Home';
+import Login from './components/Login';
+import Sub from './components/Sub';
+
 function App() {
-  console.log('App 실행됨');
-  const [data, setData] = useState(0);
-  const [search, setSearch] = useState(0);
-
-  const download = () => {
-    let downloadData = 5;
-    setData(downloadData);
-  };
-
-  useEffect(() => {
-    console.log('useEffect 실행됨');
-    download();
-  }, [search]);
   return (
     <div>
-      <h1>검색 : {search}</h1>
-      <button
-        onClick={() => {
-          setSearch(2);
-        }}
-      >
-        검색 하기
-      </button>
-      <h1>데이터 : {data}</h1>
-      <button
-        onClick={() => {
-          setData(data + 1);
-        }}
-      >
-        더하기
-      </button>
+      <div>
+        <Link to="/">홈</Link>
+      </div>
+      <div>
+        <Link to="/sub">서브</Link>
+      </div>
+      <div>
+        <Link to="/login">로그인</Link>
+      </div>
+      <Routes>
+        <Route path="/" exact={true} />
+        <Route path="/sub" element={<Sub />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <h1>App.js</h1>
     </div>
   );
 }
