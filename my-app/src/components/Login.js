@@ -1,16 +1,17 @@
 import React from 'react';
-import history from './history';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <h1>로그인 페이지</h1>
       <button
         onClick={() => {
           if (window.confirm('로그인 하시겠습니까?')) {
-            history.push('/home');
+            navigate('/home');
           } else {
-            history.push('/edit');
+            navigate('/sub');
           }
         }}
       >

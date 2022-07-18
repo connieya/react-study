@@ -27,14 +27,10 @@ function App() {
       </ul>
       <hr />
       <Routes>
-        <Route path='/' element={<Home></Home>} exact={true} />
-        <Route path='/about' element={<About></About>} />
-        <Route path='/profile:username' element={<Profile></Profile>} />
-        <Route
-          exact
-          path='/history'
-          element={<HistroySample></HistroySample>}
-        />
+        <Route path='/' element={<Home />} exact={true} />
+        <Route path={"/about"} element={<About />} />
+        <Route path='/profile/:username' element={<Profile />} />
+        <Route exact path='/history' element={<HistroySample />} />
       </Routes>
     </div>
   );

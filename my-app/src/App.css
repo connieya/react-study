@@ -1,8 +1,14 @@
-.box-style {
-  color: blue;
+.sub_container{
+  height: 250;
+  border : 2px solid black;
 }
 
-* {
-  text-align: center;
-  margin-top: 10px;
+.container{
+  height: 700;
+  border: 2px solid black;
+}
+
+div {
+  padding: 10px;
+ 
 }

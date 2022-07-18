@@ -12,6 +12,7 @@ const data = {
 };
 
 const Profile = ({ match }) => {
+  console.log("profile page match = ", match);
   const { username } = match.params;
   const profile = data[username];
   if (!profile) {
