@@ -13,6 +13,10 @@ function App() {
   const addNumber = () => {
     setNumber(number + 1);
   };
+
+  const subNumber = () => {
+    setNumber(number - 1);
+  };
   return (
     <div className="container">
       <div>
@@ -33,7 +37,7 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
       <Top number={number} />
-      <Bottom addNumber={addNumber} />
+      <Bottom addNumber={addNumber} subNumber={subNumber} />
     </div>
   );
 }
