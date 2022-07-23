@@ -93,7 +93,7 @@ function UploadVideoPage(props) {
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
-    console.log(files);
+    console.log("files====", files);
     formData.append("file", files[0]);
 
     axios.post("/api/video/uploadfiles", formData, config).then((response) => {
@@ -112,6 +112,7 @@ function UploadVideoPage(props) {
             setThumbnail(response.data.thumbsFilePath);
           } else {
             alert("Failed to make the thumbnails");
+            console.log("fail ==", response);
           }
         });
       } else {
@@ -149,7 +150,7 @@ function UploadVideoPage(props) {
 
           {Thumbnail !== "" && (
             <div>
-              <img src={`http://localhost:5000/${Thumbnail}`} alt='haha' />
+              <img src={`http://localhost:8000/${Thumbnail}`} alt='haha' />
             </div>
           )}
         </div>
