@@ -1,13 +1,12 @@
-import "./App.css";
+import React, { useState, useMemo } from "react";
 import Parent from "./components/Parent";
 import VideoRoom from "./components/VideoRoom";
+import MemoizationOne from "./components/MemoizationOne";
 
 function App() {
   return (
     <div className='App'>
-      App 화면
-      <Parent />
-      {/* <VideoRoom /> */}
+      <MemoizationOne />
     </div>
   );
 }
