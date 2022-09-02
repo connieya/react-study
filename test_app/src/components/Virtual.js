@@ -18,7 +18,7 @@ const Virtual = () => {
 
   useEffect(() => {
     setPeople(
-      [...Array(3000).keys()].map((key) => {
+      [...Array(30000).keys()].map((key) => {
         return {
           id: key,
           name: `Person : ${Math.random() * 100}`,
@@ -39,13 +39,30 @@ const Virtual = () => {
   return (
     <div>
       <h1>{time.toISOString()}</h1>
-      <ul>
+
+      <List
+        width={600}
+        height={600}
+        rowHeight={50}
+        rowCount={people.length}
+        rowRenderer={({ key, index, style, parent }) => {
+          const person = people[index];
+
+          return (
+            <div key={key}>
+              <h2>{person.name}</h2>
+            </div>
+          );
+        }}
+      />
+
+      {/* <ul>
         {people.map((person) => (
           <li key={person.id}>
             <h2>{person.name}</h2>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
