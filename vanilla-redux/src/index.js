@@ -1,24 +1,45 @@
+import { createStore } from "redux";
+
 const add = document.getElementById("add");
 const minus = document.getElementById("minus");
 const number = document.querySelector("span");
 
-let count = 0;
+const countModifier = (count = 0, action) => {
+  if (action.type === "ADD") {
+    return count + 1;
+  }
+  if (action.type === "MINUS") {
+    return count - 1;
+  }
+  return count;
+}; // data 를 변경하는 함수
 
-number.innerText = count;
+const countStore = createStore(countModifier);
 
-const updateText = () => {
-  number.innerText = count;
-};
+// let count = 0;
 
-const handleAdd = () => {
-  count++;
-  updateText();
-};
+// number.innerText = count;
 
-const handleMinus = () => {
-  count--;
-  updateText();
-};
+// const updateText = () => {
+//   number.innerText = count;
+// };
 
-add.addEventListener("click", handleAdd);
-minus.addEventListener("click", handleMinus);
+// const handleAdd = () => {
+//   count++;
+//   updateText();
+// };
+
+// const handleMinus = () => {
+//   count--;
+//   updateText();
+// };
+
+add.addEventListener("click", () => {
+  countStore.dispatch({ type: "ADD" });
+});
+
+minus.addEventListener("click", () => {
+  countStore.dispatch({ type: "MINUS" });
+});
+
+console.log(countStore.getState());
