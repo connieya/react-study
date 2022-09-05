@@ -6,6 +6,7 @@ import Detail from "./routes/Detail";
 import axios from "axios";
 import NewsList from "./chap14/NewsList";
 import Categories from "./chap14/Categories";
+import NewsPage from "./chap14_router/NewsPage";
 
 function App() {
   const [category, setCategory] = useState("all");
@@ -16,9 +17,13 @@ function App() {
         <Route path='/' exact element={<Home />}></Route>
         <Route path='/:id' element={<Detail />}></Route>
       </Routes> */}
-      {console.log("카테고리 = ", category)}
-      <Categories category={category} onSelect={onSelect} />
-      <NewsList category={category} />
+      {/* chap 14 . 라우터 적용하기 전 */}
+      {/* <Categories category={category} onSelect={onSelect} />
+      <NewsList category={category} /> */}
+      {/*  chap 14 . 라우터 적용하기 */}
+      <Routes>
+        <Route path='/:category?' element={<NewsPage />}></Route>
+      </Routes>
     </>
   );
 }
