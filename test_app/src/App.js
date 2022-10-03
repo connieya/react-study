@@ -13,17 +13,18 @@ function App() {
   const onSelect = useCallback((category) => setCategory(category), []);
   return (
     <>
+      {/* 노마드 코드 react - redux */}
       {/* <Routes>
         <Route path='/' exact element={<Home />}></Route>
         <Route path='/:id' element={<Detail />}></Route>
       </Routes> */}
       {/* chap 14 . 라우터 적용하기 전 */}
-      {/* <Categories category={category} onSelect={onSelect} />
-      <NewsList category={category} /> */}
+      <Categories category={category} onSelect={onSelect} />
+      <NewsList category={category} />
       {/*  chap 14 . 라우터 적용하기 */}
-      <Routes>
+      {/* <Routes>
         <Route path='/:category?' element={<NewsPage />}></Route>
-      </Routes>
+      </Routes> */}
     </>
   );
 }
