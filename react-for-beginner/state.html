@@ -21,7 +21,19 @@
   <script type="text/babel">
     const root = document.getElementById("root");
     function App() {
-      return <div></div>;
+      const [counter, setCounter] = React.useState(0);
+      return (
+        <div>
+          <h3>Total Clicks : {counter}</h3>
+          <button
+            onClick={() => {
+              setCounter((current) => current + 1);
+            }}
+          >
+            Click me
+          </button>
+        </div>
+      );
     }
     ReactDOM.render(<App />, root);
   </script>
