@@ -8,7 +8,7 @@ const Products = () => {
   return (
     <div className="columns is-multiline">
       {products.map((product) => (
-        <ProductItem product={product} />
+        <ProductItem product={product} key={product.id} />
       ))}
     </div>
   );
